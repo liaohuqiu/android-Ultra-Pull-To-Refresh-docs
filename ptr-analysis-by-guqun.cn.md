@@ -23,7 +23,7 @@ PtrIndicator是一个辅助类，主要是用于记录PtrFrameLayout控件的一
 ### 实现回弹效果原理
 class ScrollChecker  类用于实现回弹。主要是通过scroller完成回弹效果。scroller的作用主要是模拟一次虚拟的回弹，主要为了获取回弹过程中的中间值。通过这些瞬间位移的值来设置header、content两个布局的位置。
 
-    public void tryToScrollTo(int to, int duration)这个函数用来开始回弹（调用了mScroller.startScroll(0, 0, 0, distance, duration);），并post一个runnable。runnable根据scroll滚动过程中计算的值来设置header、content的高度。
+public void tryToScrollTo(int to, int duration)这个函数用来开始回弹（调用了mScroller.startScroll(0, 0, 0, distance, duration);），并post一个runnable。runnable根据scroll滚动过程中计算的值来设置header、content的高度。
 
 ### `dispatchTouchEvent`函数分析
 
@@ -81,7 +81,8 @@ class ScrollChecker  类用于实现回弹。主要是通过scroller完成回弹
     2. 否则，调用tryScrollBackToTopAbortRefresh回滚到顶部并取消刷新
 
 ### PtrUIHandler分析
-     PtrUIHandler主要被headerview继承。当PtrFrameLayout状态发生改变是，通过PtrUIHandler进行回调，保证每个状态headerview都可以进行相应的操作。回调有以下函数：
+
+PtrUIHandler主要被headerview继承。当PtrFrameLayout状态发生改变是，通过PtrUIHandler进行回调，保证每个状态headerview都可以进行相应的操作。回调有以下函数：
 
 ```
 public void onUIReset(PtrFrameLayout frame);
