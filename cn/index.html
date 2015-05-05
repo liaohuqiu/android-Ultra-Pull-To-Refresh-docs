@@ -175,7 +175,7 @@
 <p>于是我从<a href="https://github.com/etao-open-source/cube-sdk">Cube-SDK</a> 中把下拉刷新独立出来。这就有了<a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh">android-Ultra-Pull-to-Refresh</a>。</p>
 </blockquote>
 
-<h4 id="交互">交互</h4>
+<h3 id="交互">交互</h3>
 
 <p>Header View 和 Content View 的位置关系如下图:</p>
 <div class="highlight"><pre><code class="language-text" data-lang="text">       +--------------+                                                刷新距离
@@ -202,7 +202,7 @@
              位置1                         位置2                         位置3
             初始状态                    未达刷新距离                  达到刷新距离
 </code></pre></div>
-<h4 id="位置关系">位置关系</h4>
+<h3 id="位置关系">位置关系</h3>
 
 <p>手指触摸屏幕往下拉动，Header View 和 Content View 也往下移动。</p>
 
@@ -216,7 +216,7 @@
 <li><p>位置3。继续下拉，Content View 头部越过刷新线, 从位置2到到达位置3。在位置3，释放将会触发刷新。</p></li>
 </ol>
 
-<h4 id="距离的定义">距离的定义</h4>
+<h3 id="距离的定义">距离的定义</h3>
 
 <ul>
 <li><p>下拉距离<code>(Offset)</code></p>
@@ -232,7 +232,7 @@
 <p>这个时候的<code>下拉距离</code>，我们称为<strong>刷新时保持头部的距离</strong>，这个距离一般是头部的高度，但是只要你愿意，你可以自定义。</p></li>
 </ul>
 
-<h4 id="下拉刷新和释放刷新">下拉刷新和释放刷新</h4>
+<h3 id="下拉刷新和释放刷新">下拉刷新和释放刷新</h3>
 
 <ul>
 <li><p>下拉刷新<code>(PullToRefresh)</code></p>
@@ -245,7 +245,7 @@
 <p>如果从位置3往上推，回到位置2，释放，将不会触发刷新操作。</p></li>
 </ul>
 
-<h4 id="刷新时保持头部-(keepheaderwhilerefresh)">刷新时保持头部 <code>(KeepHeaderWhileRefresh)</code></h4>
+<h3 id="刷新时保持头部-(keepheaderwhilerefresh)">刷新时保持头部 <code>(KeepHeaderWhileRefresh)</code></h3>
 
 <ul>
 <li><p>如果不设置刷新时保持头部。不管<code>下拉刷新</code>还是<code>释放刷新</code>，释放之后，回归到初始位置。</p></li>
@@ -259,7 +259,7 @@
 </ul></li>
 </ul>
 
-<h4 id="自动刷新(autorefresh)">自动刷新<code>(AutoRefresh)</code></h4>
+<h3 id="自动刷新(autorefresh)">自动刷新<code>(AutoRefresh)</code></h3>
 
 <p>用户手动下拉，可以实现数据更新。同时，也允许程序调用，展示刷新UI，实现自动刷新。</p>
 
@@ -278,7 +278,7 @@
 <p>到<code>刷新时保持头部的距离</code>之后，才开始进入刷新状态。</p></li>
 </ul>
 
-<h4 id="接口和实现">接口和实现</h4>
+<h3 id="接口和实现">接口和实现</h3>
 
 <ul>
 <li><p><code>PtrHandler</code> </p>
@@ -306,7 +306,7 @@
 <p><code>PtrFrameLayout</code> 接受一个<code>PtrHandler</code> 和多个<code>PtrUIHandler</code>。在下拉刷新的过程中，你可以通过非常灵活的方式展现出各种效果。</p></li>
 </ul>
 
-<h4 id="一些疑难问题">一些疑难问题</h4>
+<h3 id="一些疑难问题">一些疑难问题</h3>
 
 <ol>
 <li><p>列表无法向上滑动，总是下拉。<code>PtrHandler.checkCanDoRefresh</code> 这个方法实现有问题。</p></li>
