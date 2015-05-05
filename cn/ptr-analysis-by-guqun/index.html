@@ -129,8 +129,9 @@
 <h3 id="实现回弹效果原理">实现回弹效果原理</h3>
 
 <p>class ScrollChecker  类用于实现回弹。主要是通过scroller完成回弹效果。scroller的作用主要是模拟一次虚拟的回弹，主要为了获取回弹过程中的中间值。通过这些瞬间位移的值来设置header、content两个布局的位置。</p>
-<div class="highlight"><pre><code class="language-text" data-lang="text">public void tryToScrollTo(int to, int duration)这个函数用来开始回弹（调用了mScroller.startScroll(0, 0, 0, distance, duration);），并post一个runnable。runnable根据scroll滚动过程中计算的值来设置header、content的高度。
-</code></pre></div>
+
+<p>public void tryToScrollTo(int to, int duration)这个函数用来开始回弹（调用了mScroller.startScroll(0, 0, 0, distance, duration);），并post一个runnable。runnable根据scroll滚动过程中计算的值来设置header、content的高度。</p>
+
 <h3 id="dispatchtouchevent函数分析"><code>dispatchTouchEvent</code>函数分析</h3>
 
 <ol>
@@ -202,8 +203,9 @@
 </ol>
 
 <h3 id="ptruihandler分析">PtrUIHandler分析</h3>
-<div class="highlight"><pre><code class="language-text" data-lang="text"> PtrUIHandler主要被headerview继承。当PtrFrameLayout状态发生改变是，通过PtrUIHandler进行回调，保证每个状态headerview都可以进行相应的操作。回调有以下函数：
-</code></pre></div><div class="highlight"><pre><code class="language-text" data-lang="text">public void onUIReset(PtrFrameLayout frame);
+
+<p>PtrUIHandler主要被headerview继承。当PtrFrameLayout状态发生改变是，通过PtrUIHandler进行回调，保证每个状态headerview都可以进行相应的操作。回调有以下函数：</p>
+<div class="highlight"><pre><code class="language-text" data-lang="text">public void onUIReset(PtrFrameLayout frame);
 public void onUIRefreshPrepare(PtrFrameLayout frame);
 public void onUIRefreshBegin(PtrFrameLayout frame);
 public void onUIRefreshComplete(PtrFrameLayout frame);
