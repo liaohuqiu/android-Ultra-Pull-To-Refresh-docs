@@ -73,7 +73,7 @@ aar格式是在 Google I/O 2013 才提出的。[maven-android-plugin][] 3.7 版�
 
 > 于是我从[Cube-SDK][] 中把下拉刷新独立出来。这就有了[android-Ultra-Pull-to-Refresh][]。
 
-#### 交互
+### 交互
 
 Header View 和 Content View 的位置关系如下图:
 
@@ -103,7 +103,7 @@ Header View 和 Content View 的位置关系如下图:
             初始状态                    未达刷新距离                  达到刷新距离
 
 ```
-#### 位置关系
+### 位置关系
 
 手指触摸屏幕往下拉动，Header View 和 Content View 也往下移动。
 
@@ -117,7 +117,7 @@ Header View 和 Content View 的位置关系如下图:
 
 3.  位置3。继续下拉，Content View 头部越过刷新线, 从位置2到到达位置3。在位置3，释放将会触发刷新。
 
-#### 距离的定义
+### 距离的定义
 
 
 *   下拉距离`(Offset)`
@@ -135,7 +135,7 @@ Header View 和 Content View 的位置关系如下图:
     这个时候的`下拉距离`，我们称为**刷新时保持头部的距离**，这个距离一般是头部的高度，但是只要你愿意，你可以自定义。
 
 
-#### 下拉刷新和释放刷新
+### 下拉刷新和释放刷新
 
 *   下拉刷新`(PullToRefresh)`
 
@@ -147,7 +147,7 @@ Header View 和 Content View 的位置关系如下图:
 
     如果从位置3往上推，回到位置2，释放，将不会触发刷新操作。
 
-#### 刷新时保持头部 `(KeepHeaderWhileRefresh)`
+### 刷新时保持头部 `(KeepHeaderWhileRefresh)`
 
 *   如果不设置刷新时保持头部。不管`下拉刷新`还是`释放刷新`，释放之后，回归到初始位置。
 
@@ -159,7 +159,7 @@ Header View 和 Content View 的位置关系如下图:
 
     *   如果上推使得距离小于`刷新时保持头部的距离`, 释放后，位置不动。刷新完成之后，回归初始位置。
 
-#### 自动刷新`(AutoRefresh)`
+### 自动刷新`(AutoRefresh)`
 
 用户手动下拉，可以实现数据更新。同时，也允许程序调用，展示刷新UI，实现自动刷新。
 
@@ -178,7 +178,7 @@ Header View 和 Content View 的位置关系如下图:
     到`刷新时保持头部的距离`之后，才开始进入刷新状态。
 
 
-#### 接口和实现
+### 接口和实现
 
 *  `PtrHandler` 
 
@@ -201,7 +201,7 @@ Header View 和 Content View 的位置关系如下图:
     `PtrFrameLayout` 接受一个`PtrHandler` 和多个`PtrUIHandler`。在下拉刷新的过程中，你可以通过非常灵活的方式展现出各种效果。
 
 
-#### 一些疑难问题
+### 一些疑难问题
 
 1.  列表无法向上滑动，总是下拉。`PtrHandler.checkCanDoRefresh` 这个方法实现有问题。
 
