@@ -1,0 +1,58 @@
+# Dependencies
+markdown:         redcarpet
+redcarpet:
+      extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+gems:           ['jekyll-multiple-languages']
+
+# Server
+baseurl:          /
+encoding:         UTF-8
+
+exclude:
+  - "conf"
+  - "tools"
+
+info:
+  site_name:    Android Ultra Pull To Refresh
+
+meta:
+  description:  Ultra Pull to Refresh for Android. Support all the views
+  keywords:     Android Ultra Pull To Refresh, PullToRefresh
+  author:       liaohuqiu@gmail.com
+
+languages:          ['en', 'cn']
+language_default:   "en"
+
+left_nav:
+  en:
+    path:       /
+    title:      PTR
+    items:
+      - path:     /javadoc
+        title:    "Javadoc"
+  cn:
+    path:     /cn
+    title:    PTR
+    items:
+      - path:     /cn/ptr-analysis-by-guqun
+        title:    牛群的PtrFrameLayout分析
+      - path:     /javadoc
+        title:    "Javadoc"
+
+right_nav:
+  - title:    English
+    url:      /
+  - title:    简体中文
+    url:      /cn
+  - title:    Fork on Github
+    url:     https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh
+
+analytics:
+  google:
+    account:    UA-43024238-9
